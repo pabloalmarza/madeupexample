@@ -1,5 +1,29 @@
-# Starter pipeline
-- task: synopsys-detect.synopsys-detect.synopsys-detect-task.SynopsysDetectTask@3
+jobs:
+- job: Test
+  pool:
+    name: Azure Pipelines
+    vmImage: windows-2019
+  workspace:
+    clean: all
+  steps:
+  - checkout: none
+  - task: PowerShell@2
+    displayName: Initialize BlackDuck
+    inputs:
+      targetType: 'inline'
+      errorActionPreference: stop
+      ignoreLASTEXITCODE: false
+      failOnStderr: false
+      script: |
+        # For the BlackDuck conda detector to work, it is enough to provide a file environment.yml as trigger
+        # The detector itself does not inspect the file, but the environment it is pointed to
+        # See https://synopsys.atlassian.net/wiki/spaces/INTDOCS/pages/631276245/Package+Manager+Information#Conda-support
+        New-Item -ItemType directory -Path "$env:Pipeline_Workspace\bd_source"
+        New-Item "$env:Pipeline_Workspace\bd_source\environment.yml" -ItemType file
+
+        # See https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/anaconda?view=azure-devops&tabs=vs2017#get-started
+        Write-Host "##vso[task.prependpath]$env:CONDA\Scripts"
+  - task: synopsys-detect.synopsys-detect.synopsys-detect-task.SynopsysDetectTask@3
     inputs:
       BlackDuckService: '<service connection>'
       AddTaskSummary: true
@@ -15,21 +39,3 @@
       --detect.code.location.name=<project>_$(Build.BuildNumber)
       --detect.wait.for.results=false
       --detect.detector.search.depth=0
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-default
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
