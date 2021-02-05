@@ -1,30 +1,5 @@
-jobs:
-- job: Test
-  pool:
-    name: Azure Pipelines
-    vmImage: windows-2019
-  workspace:
-    clean: all
-  steps:
-  - checkout: none
-  - task: PowerShell@2
-    displayName: Initialize BlackDuck
-    inputs:
-      targetType: 'inline'
-      errorActionPreference: stop
-      ignoreLASTEXITCODE: false
-      failOnStderr: false
-      script: |
-        # For the BlackDuck conda detector to work, it is enough to provide a file environment.yml as trigger
-        # The detector itself does not inspect the file, but the environment it is pointed to
-        # See https://synopsys.atlassian.net/wiki/spaces/INTDOCS/pages/631276245/Package+Manager+Information#Conda-support
-        New-Item -ItemType directory -Path "$env:Pipeline_Workspace\bd_source"
-        New-Item "$env:Pipeline_Workspace\bd_source\environment.yml" -ItemType file
-
-        # See https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/anaconda?view=azure-devops&tabs=vs2017#get-started
-        Write-Host "##vso[task.prependpath]$env:CONDA\Scripts"
-  - task: synopsys-detect.synopsys-detect.synopsys-detect-task.SynopsysDetectTask@3
-      inputs:
-        BlackDuckService: 'blackduck1'
-        DetectVersion: 'latest'
-        DetectArguments: '--blackduck.trust.cert=true'
+- task: SynopsysDetectTask@3
+  inputs:
+    BlackDuckService: 'blackduck1'
+    DetectVersion: 'latest'
+    DetectArguments: '--blackduck.trust.cert=true'
