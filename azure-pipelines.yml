@@ -30,4 +30,8 @@ jobs:
       DetectArguments:
             --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com
             --blackduck.api.token="MjZmZWQ0NWItMzAzMC00MTUyLTljODctOWZkMDU0NmI3ZDgxOmRlOWExMjcyLWM4ODgtNDFjNy1iNDc1LWYxNDkxZDQyZTI2Nw=="
-            --blackduck.trust.cert=true
+            - task: SynopsysDetectTask@3
+  inputs:
+    BlackDuckService: 'blackduck1'
+    DetectVersion: 'latest'
+    DetectArguments: '--blackduck.trust.cert=true'
