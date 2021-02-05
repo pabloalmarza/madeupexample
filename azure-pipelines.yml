@@ -1,3 +1,12 @@
+jobs:
+- job: Test
+  pool:
+    name: Azure Pipelines
+    vmImage: windows-2019
+  workspace:
+    clean: all
+  steps:
+  - checkout: none
 - task: SynopsysDetectTask@3
   inputs:
     BlackDuckService: 'blackduck1'
