@@ -28,7 +28,14 @@ jobs:
       BlackDuckService: '<service connection>'
       AddTaskSummary: true
       DetectArguments: |
-      --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com
-      --blackduck.api.token="MjZmZWQ0NWItMzAzMC00MTUyLTljODctOWZkMDU0NmI3ZDgxOmRlOWExMjcyLWM4ODgtNDFjNy1iNDc1LWYxNDkxZDQyZTI2Nw=="
-      --blackduck.trust.cert=true
+      --detect.source.path=$(Pipeline.Workspace)\bd_source
+      --detect.required.detector.types=CONDA
+      --detect.blackduck.signature.scanner.copyright.search=true
+      --detect.blackduck.signature.scanner.license.search=true
+      --detect.project.name=<project>
+      --detect.project.version.phase=Released
+      --detect.project.version.distribution=EXTERNAL
+      --detect.project.version.name=$(Build.BuildNumber)
+      --detect.code.location.name=<project>_$(Build.BuildNumber)
       --detect.wait.for.results=false
+      --detect.detector.search.depth=0
