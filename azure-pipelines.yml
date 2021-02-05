@@ -29,7 +29,7 @@ jobs:
       AddTaskSummary: true
       DetectArguments: |
       --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com
-      --blackduck.api.token=MjZmZWQ0NWItMzAzMC00MTUyLTljODctOWZkMDU0NmI3ZDgxOmRlOWExMjcyLWM4ODgtNDFjNy1iNDc1LWYxNDkxZDQyZTI2Nw==
+      --blackduck.api.token="MjZmZWQ0NWItMzAzMC00MTUyLTljODctOWZkMDU0NmI3ZDgxOmRlOWExMjcyLWM4ODgtNDFjNy1iNDc1LWYxNDkxZDQyZTI2Nw=="
       --blackduck.trust.cert=true
       --detect.wait.for.results=false
       --detect.detector.search.depth=0
