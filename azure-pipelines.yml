@@ -1,8 +1,4 @@
 jobs:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com --blackduck.api.token=ZjE4YWQxZWYtYTM4My00ZjExLWJlMzctNmI1YjIwM2QwMDQ2OjVmNDMwNjA2LWE0ZTktNDQ4NS1iYTExLWVkOWJhNWI0M2E5OA== --blackduck.trust.cert=true --detect.project.name=project1 --detect.project.version.name=version1'
 - job: Test
   pool:
     name: Azure Pipelines
@@ -11,6 +7,7 @@ jobs:
     clean: all
   steps:
   - checkout: none
-  - task: CmdLine@2
+  - task: Bash@3
     inputs:
-      script: 'bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com --blackduck.api.token=ZjE4YWQxZWYtYTM4My00ZjExLWJlMzctNmI1YjIwM2QwMDQ2OjVmNDMwNjA2LWE0ZTktNDQ4NS1iYTExLWVkOWJhNWI0M2E5OA== --blackduck.trust.cert=true --detect.project.name=project1 --detect.project.version.name=version1'
+      targetType: 'inline'
+      script: 'curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com --blackduck.api.token=ZjE4YWQxZWYtYTM4My00ZjExLWJlMzctNmI1YjIwM2QwMDQ2OjVmNDMwNjA2LWE0ZTktNDQ4NS1iYTExLWVkOWJhNWI0M2E5OA== --blackduck.trust.cert=true --detect.project.name=project1 --detect.project.version.name=version1'
