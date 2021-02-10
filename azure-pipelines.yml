@@ -11,5 +11,4 @@ jobs:
     inputs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
-      DetectArguments: '--blackduck.trust.cert=true'
-      DetectArguments: '--logging.level.com.synopsys.integration=TRACE'
+      DetectArguments: '--blackduck.trust.cert=true --logging.level.com.synopsys.integration=TRACE'
