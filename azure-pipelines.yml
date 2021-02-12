@@ -12,6 +12,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: '
-      env ;
       echo "++++++++++++++++++++++" ;
+      export proxy http_proxy="http://1.1.1.1:8080" ;
+      export proxy https_proxy="https://1.1.1.1:8080" ;
+      env ;
       bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-92-223-129.compute-1.amazonaws.com --blackduck.api.token=YWFlOTVkMzUtYTQ1OC00NTNkLWI2ZTUtMmZiNDE1NzNmMDk3OjczMTg2MzdjLTgxNjMtNGFlMy04YTUzLWY0ZTQxNzcxZjI0OQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121'
