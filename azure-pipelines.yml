@@ -14,4 +14,7 @@ jobs:
       script: '
       env ;
       echo "++++++++++++++++++++++" ;
-      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-3-239-34-0.compute-1.amazonaws.com --blackduck.api.token=ZjE4YWQxZWYtYTM4My00ZjExLWJlMzctNmI1YjIwM2QwMDQ2OjVmNDMwNjA2LWE0ZTktNDQ4NS1iYTExLWVkOWJhNWI0M2E5OA== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121'
+      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-92-223-129.compute-1.amazonaws.com --blackduck.api.token=YWFlOTVkMzUtYTQ1OC00NTNkLWI2ZTUtMmZiNDE1NzNmMDk3OjczMTg2MzdjLTgxNjMtNGFlMy04YTUzLWY0ZTQxNzcxZjI0OQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121';
+      export proxy http_proxy="http://1.1.1.1:8080";
+      export proxy https_proxy="https://1.1.1.1:8080";
+      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-92-223-129.compute-1.amazonaws.com --blackduck.api.token=YWFlOTVkMzUtYTQ1OC00NTNkLWI2ZTUtMmZiNDE1NzNmMDk3OjczMTg2MzdjLTgxNjMtNGFlMy04YTUzLWY0ZTQxNzcxZjI0OQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121';
