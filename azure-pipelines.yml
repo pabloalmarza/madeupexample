@@ -15,5 +15,5 @@ jobs:
       echo "++++++++++++++++++++++" ;
       export proxy http_proxy="http://1.1.1.1:8080" ;
       export proxy https_proxy="https://1.1.1.1:8080" ;
-      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-234-125-163.compute-1.amazonaws.com --blackduck.api.token=MTMwNDQ4OTItYjYyZi00NTc1LWFhZmMtMTEwOGUwZjk4ZWY0OjZlMTA2ZDM3LTE1NTktNDIyMy1hMTg5LWJiNjgzZDE2NDMxOQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121';
-      env
+      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-234-125-163.compute-1.amazonaws.com --blackduck.api.token=MTMwNDQ4OTItYjYyZi00NTc1LWFhZmMtMTEwOGUwZjk4ZWY0OjZlMTA2ZDM3LTE1NTktNDIyMy1hMTg5LWJiNjgzZDE2NDMxOQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121' ;
+      bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-234-125-163.compute-1.amazonaws.com --blackduck.api.token=MTMwNDQ4OTItYjYyZi00NTc1LWFhZmMtMTEwOGUwZjk4ZWY0OjZlMTA2ZDM3LTE1NTktNDIyMy1hMTg5LWJiNjgzZDE2NDMxOQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121'
