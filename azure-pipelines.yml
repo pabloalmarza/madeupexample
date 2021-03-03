@@ -7,8 +7,8 @@ jobs:
     clean: all
   steps:
   - checkout: none
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-234-125-163.compute-1.amazonaws.com --blackduck.api.token=MTMwNDQ4OTItYjYyZi00NTc1LWFhZmMtMTEwOGUwZjk4ZWY0OjZlMTA2ZDM3LTE1NTktNDIyMy1hMTg5LWJiNjgzZDE2NDMxOQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121'''
+  - task: Bash@3
+    name: bash2
+    inputs:
+      targetType: 'inline'
+      script: 'bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=https://ec2-54-234-125-163.compute-1.amazonaws.com --blackduck.api.token=MTMwNDQ4OTItYjYyZi00NTc1LWFhZmMtMTEwOGUwZjk4ZWY0OjZlMTA2ZDM3LTE1NTktNDIyMy1hMTg5LWJiNjgzZDE2NDMxOQ== --blackduck.trust.cert=true --detect.project.name=NWCC_ALL --detect.project.version.name=NWCC_Q121'
