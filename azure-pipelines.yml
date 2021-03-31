@@ -12,4 +12,3 @@ jobs:
     BlackDuckService: 'blackduck1'
     DetectVersion: '6.8.0'
     DetectArguments: '--blackduck.trust.cert=true'
-      DetectVersion: 'latest'
