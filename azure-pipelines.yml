@@ -14,3 +14,4 @@ jobs:
   - task: SynopsysPolaris@1
     inputs:
       polarisService: 'polaris1'
+      polarisCommand: 'analyze -w'
