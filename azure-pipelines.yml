@@ -9,10 +9,6 @@ jobs:
   - checkout: none
   - task: SynopsysPolaris@1
     inputs:
-      polarisService: 'polaris2'
-      polarisCommand: 'analyze -w'
-  - task: SynopsysPolaris@1
-    inputs:
-      polarisService: 'polaris2'
+      polarisService: 'polaris3'
       polarisCommand: 'analyze -w'
       waitForIssues: true
