@@ -7,11 +7,11 @@ jobs:
     clean: all
   steps:
   - checkout: none
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'set DETECT_LATEST_RELEASE_VERSION=6.7.0'
   - task: SynopsysDetectTask@6
     inputs:
       BlackDuckService: 'blackduck1'
-      - task: Bash@3
-        inputs:
-          targetType: 'inline'
-          script: 'set DETECT_LATEST_RELEASE_VERSION=6.7.0'
       DetectArguments: '--blackduck.trust.cert=true'
