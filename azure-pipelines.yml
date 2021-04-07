@@ -10,4 +10,4 @@ jobs:
   - task: SynopsysDetectTask@6
     inputs:
       BlackDuckService: 'blackduck1'
-      DetectVersion: 'Latest'
+      DetectVersion: 'latest'
