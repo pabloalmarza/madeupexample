@@ -7,8 +7,7 @@ jobs:
     clean: all
   steps:
   - checkout: none
-  - task: SynopsysPolaris@1
-    inputs:
-      polarisService: 'polaris3'
-      polarisCommand: 'analyze -w'
-      waitForIssues: true
+- task: SynopsysDetectTask@6
+  inputs:
+    BlackDuckService: 'blackduck1'
+    DetectVersion: 'Latest'
