@@ -11,3 +11,4 @@ jobs:
     inputs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
+      DetectArguments: '--blackduck.trust.cert=true'
