@@ -10,7 +10,7 @@ jobs:
   - task: CmdLine@2
     inputs:
       script: |
-        cat pem.pem
+        ll
   - task: SynopsysDetectTask@6
     inputs:
       BlackDuckService: 'blackduck1'
