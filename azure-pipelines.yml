@@ -16,6 +16,9 @@ jobs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
       DetectArguments: '--detect.project.name=test --detect.project.version.name=1.0 --blackduck.trust.cert=true'
-  - task: CmdLine@2
+  - task: CopyFilesOverSSH@0
     inputs:
-      script: 'ssh -i pem.pem -t ec2-user@ec2-3-90-44-94.compute-1.amazonaws.com "sudo mkdir /tmp/test"'
+      sshEndpoint: 'ssh1'
+      sourceFolder: 'pem.pem'
+      contents: '**'
+      readyTimeout: '20000'
