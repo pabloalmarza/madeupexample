@@ -11,3 +11,4 @@ jobs:
     inputs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
+      DetectArguments: '--detect.project.name=test--detect.project.version.name=1.0'
