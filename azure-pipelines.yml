@@ -11,10 +11,10 @@ jobs:
     inputs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
-      DetectArguments: '--detect.project.name=test --detect.project.version.name=1.0 --blackduck.trust.cert=true --detect.diagnostic.extended=true'
+      DetectArguments: '--detect.output.path=/Users/VssAdministrator/blackduck/runs/ --detect.project.name=test --detect.project.version.name=1.0 --blackduck.trust.cert=true --detect.diagnostic.extended=true'
   - task: CopyFilesOverSSH@0
     inputs:
       sshEndpoint: 'ssh1'
-      sourceFolder: '/home/vsts/blackduck/runs/'
+      sourceFolder: '/Users/VssAdministrator/blackduck/runs/'
       contents: '**'
       readyTimeout: '20000'
