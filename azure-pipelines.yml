@@ -15,6 +15,6 @@ jobs:
   - task: CopyFilesOverSSH@0
     inputs:
       sshEndpoint: 'ssh1'
-      sourceFolder: 'D:\\Users\\VssAdministrator\\blackduck\\runs\\'
+      sourceFolder: 'D:\\Users\\VssAdministrator\\blackduck\\runs\\runs'
       contents: '**'
       readyTimeout: '20000'
