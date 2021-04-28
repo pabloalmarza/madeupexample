@@ -15,6 +15,6 @@ jobs:
   - task: CopyFilesOverSSH@0
     inputs:
       sshEndpoint: 'ssh1'
-      sourceFolder: 'pem.pem'
+      sourceFolder: '/home/vsts/blackduck/runs/'
       contents: '**'
       readyTimeout: '20000'
