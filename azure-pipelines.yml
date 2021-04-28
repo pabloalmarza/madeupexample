@@ -12,10 +12,10 @@ jobs:
       BlackDuckService: 'blackduck1'
       DetectVersion: 'latest'
       DetectArguments: '--detect.project.name=test --detect.project.version.name=1.0 --blackduck.trust.cert=true'
-    - task: Bash@3
-      inputs:
-        targetType: 'inline'
-        script: |
-          # Write your commands here
-          
-          ls
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Write your commands here
+        
+        ls
