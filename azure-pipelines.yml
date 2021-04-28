@@ -10,7 +10,7 @@ jobs:
   - task: CmdLine@2
     inputs:
       script: |
-        pwd
+        ls -R /
   - task: SynopsysDetectTask@6
     inputs:
       BlackDuckService: 'blackduck1'
