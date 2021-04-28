@@ -10,7 +10,6 @@ jobs:
   - task: CmdLine@2
     inputs:
       script: |
-        echo Hello world
         ls
   - task: SynopsysDetectTask@6
     inputs:
