@@ -1,13 +1,44 @@
-jobs:
-- job: Test
-  pool:
-    name: Azure Pipelines
-    vmImage: windows-2019
-  workspace:
-    clean: all
-  steps:
-  - checkout: none
-  - task: SynopsysDetectTask@6
-    inputs:
-      BlackDuckService: 'blackduck1'
-      DetectVersion: 'latest'
+trigger:
+  branches:
+    include:
+    - develop
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Npm@1
+      inputs:
+        command: install
+      displayName: 'npm install'
+    - task: Npm@1
+      inputs:
+        command: custom
+        customCommand: run prepush
+      displayName: 'ng build --prod'
+    - task: CopyFiles@2
+      inputs:
+        contents: 'dist/**'
+        TargetFolder: 'temp'
+    - task: CopyFiles@2
+      inputs:
+        contents: 'node_modules/**'
+        TargetFolder: 'temp'
+    - task: CopyFiles@2
+      inputs:
+        contents: 'package.json'
+        TargetFolder: 'temp'
+    - task: CopyFiles@2
+      inputs:
+        contents: 'web.config'
+        TargetFolder: 'temp'
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: 'temp'
+        includeRootFolder: false
+    - task: SynopsysDetectTask@6
+      inputs:
+        BlackDuckService: 'blackduck1'
+        DetectVersion: 'latest'
