@@ -6,3 +6,4 @@ steps:
       inputs:
         BlackDuckService: 'blackduck1'
         DetectVersion: 'latest'
+        DetectArguments: ''
