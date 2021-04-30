@@ -33,4 +33,4 @@ stages:
       inputs:
         BlackDuckService: 'blackduck1'
         DetectVersion: 'latest'
-        DetectArguments: '--blackduck.trust.cert=true'
+        DetectArguments: '--detect.timeout=300'
