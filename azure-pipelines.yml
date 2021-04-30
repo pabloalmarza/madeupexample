@@ -29,10 +29,7 @@ stages:
       inputs:
         contents: 'web.config'
         TargetFolder: 'temp'
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: 'temp'
-        includeRootFolder: false
+
     - task: SynopsysDetectTask@6
       inputs:
         BlackDuckService: 'blackduck1'
