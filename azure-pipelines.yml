@@ -2,12 +2,8 @@ trigger:
   branches:
     include:
     - develop
-stages:
-- stage: __default
-  jobs:
-  - job: Job
-    pool:
-      vmImage: 'ubuntu-latest'
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
     - task: SynopsysDetectTask@6
