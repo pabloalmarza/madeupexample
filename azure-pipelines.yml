@@ -8,8 +8,8 @@ stages:
   - job: Job
     pool:
       vmImage: 'ubuntu-latest'
-
+    steps:
     - task: SynopsysDetectTask@6
       inputs:
-        BlackDuckService: 'blackduck1'
+        BlackDuckService: 'Blackduck_Hub'
         DetectVersion: 'latest'
