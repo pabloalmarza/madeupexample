@@ -10,6 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: wget bbc.co.uk
   displayName: 'Run a one-line script'
 
