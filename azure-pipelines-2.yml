@@ -13,8 +13,3 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    ping bbc.co.uk
-    ping cegid.app.blackduck.com
-    ping asml.app.blackduck.com
-  displayName: 'Run a multi-line script'
