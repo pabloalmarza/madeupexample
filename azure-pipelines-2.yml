@@ -10,6 +10,6 @@ pool:
   vmImage: ubuntu-18.04
 
 steps:
-- script: nslookup cegid.app.blackduck.com
+- script: nslookup cegid.app.blackduck.com 1.1.1.1
   displayName: 'Run a one-line script'
 
