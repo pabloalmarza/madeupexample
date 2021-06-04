@@ -10,6 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: wget bbc.co.uk
+- script: wget cegid.app.blackduck.com
   displayName: 'Run a one-line script'
 
