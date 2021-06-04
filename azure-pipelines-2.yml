@@ -10,6 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: nslookup asml.app.blackduck.com
+- script: nslookup cegid.app.blackduck.com
   displayName: 'Run a one-line script'
 
