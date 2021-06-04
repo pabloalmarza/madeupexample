@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: ping cegid.app.blackduck.com
   displayName: 'Run a one-line script'
