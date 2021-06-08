@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-18.04
 
 steps:
-- script: nslookup cegid.app.blackduck.com 1.1.1.1
-  displayName: 'Run a one-line script'
+- 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      mkdir /home/detect/
+      wget --no-check-certificate https://sig-repo.synopsys.com/artifactory/bds-integrations-release/com/synopsys/integration/synopsys-detect/6.9.1/synopsys-detect-6.9.1-air-gap.zip -O /home/detect/detect.zip
+      unzip /home/detect/detect.zip
 
