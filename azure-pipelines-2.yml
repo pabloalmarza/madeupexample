@@ -19,6 +19,7 @@ steps:
       ls -lh /tmp/outputdetect/
 - task: SynopsysDetectTask@6
   inputs:
+    BlackDuckService: 'blackduck1'
     DetectVersion: 'latest'
     DetectArguments: '--blackduck.offline.mode=true'
 
