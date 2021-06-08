@@ -16,4 +16,9 @@ steps:
     script: |
       wget --no-check-certificate https://sig-repo.synopsys.com/artifactory/bds-integrations-release/com/synopsys/integration/synopsys-detect/6.9.1/synopsys-detect-6.9.1-air-gap.zip -O /tmp/detect.zip
       unzip /tmp/detect.zip
+      ls -lh /tmp
+- task: SynopsysDetectTask@6
+  inputs:
+    DetectVersion: 'latest'
+    DetectArguments: '--blackduck.offline.mode=true'
 
