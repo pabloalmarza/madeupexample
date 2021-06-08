@@ -15,8 +15,8 @@ steps:
     targetType: 'inline'
     script: |
       wget --no-check-certificate https://sig-repo.synopsys.com/artifactory/bds-integrations-release/com/synopsys/integration/synopsys-detect/6.9.1/synopsys-detect-6.9.1-air-gap.zip -O /tmp/detect.zip
-      unzip /tmp/detect.zip
-      ls -lh /tmp
+      unzip /tmp/detect.zip -d /tmp/outputdetect/
+      ls -lh /tmp/outputdetect/
 - task: SynopsysDetectTask@6
   inputs:
     DetectVersion: 'latest'
