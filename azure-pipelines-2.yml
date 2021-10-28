@@ -10,12 +10,10 @@ pool:
   vmImage: ubuntu-18.04
 
 steps:
-- task: Bash@3
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: |
-      wget --no-check-certificate https://sig-repo.synopsys.com/artifactory/bds-integrations-release/com/synopsys/integration/synopsys-detect/6.9.1/synopsys-detect-6.9.1-air-gap.zip -O /tmp/detect.zip
-      unzip /tmp/detect.zip -d /tmp/outputdetect/
-      java -jar /tmp/outputdetect/synopsys-detect-6.9.1.jar --detect.source.path=/tmp/outputdetect/packaged-inspectors --blackduck.url=https://ec2-3-235-64-110.compute-1.amazonaws.com --blackduck.api.token=ZDczMGVjYmEtMzVhMy00ZjMwLTg5NTktYTA2NTEwNzcwYWZlOmI2YjQ4MDVkLTA2NDktNDAxMi1hYjhlLTdkNjlkYTgxOGFiNA== --blackduck.trust.cert=true
-
-
+      mkdir s
+      mkdir s/Common
+      mkdir s/special
+      mkdir s/Common/test
