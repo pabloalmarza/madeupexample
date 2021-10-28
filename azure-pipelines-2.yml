@@ -13,12 +13,14 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      mkdir s
-      cd s
       mkdir Common
-      mkdir special
-      cd special
-      mkdir test
+      cd Common
+      mkdir "Images and Icons"
+      cd "Images and Icons"
+      mkdir VS2008ImageLibrary
+      cd VS2008ImageLibrary
+      mkdir Animations
+      cd Animations
       SET var=%cd%
       ECHO %var%
 - task: SynopsysDetectTask@7
