@@ -14,10 +14,11 @@ steps:
   inputs:
     script: |
       mkdir s
-      mkdir s/Common
-      mkdir s/special
-      mkdir s/Common/test
-      cd s/Common
+      cd s
+      mkdir Common
+      mkdir special
+      cd special
+      mkdir test
       SET var=%cd%
       ECHO %var%
 - task: SynopsysDetectTask@7
