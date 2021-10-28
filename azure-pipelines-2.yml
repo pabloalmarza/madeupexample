@@ -34,3 +34,15 @@ steps:
       --detect.source.path="D:\\a\\1\\s\\Common"
       --detect.excluded.directories="D:\\a\\1\\s\\Common\\Images and Icons\\VS2008ImageLibrary\\Animations"
     DetectVersion: 'latest'
+- task: SynopsysDetectTask@7
+  inputs:
+    BlackDuckService: 'bd_aws'
+    DetectArguments: |
+      --blackduck.trust.cert=true
+      --detect.code.location.name=SCM4 4.34
+      --detect.project.name=SCM4
+      --detect.project.version.name=4.34
+      --detect.source.path="D:\\a\\1\\s\\Common"
+      --detect.excluded.directories="D:\\a\\1\\s\\Common\\Images and Icons\\VS2008ImageLibrary\\Animations"
+    AddTaskSummary: false
+    DetectVersion: 'latest'
