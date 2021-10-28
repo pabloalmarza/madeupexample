@@ -17,3 +17,4 @@ steps:
       mkdir s/Common
       mkdir s/special
       mkdir s/Common/test
+      dir s/Common
