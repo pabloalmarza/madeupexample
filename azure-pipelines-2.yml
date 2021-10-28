@@ -23,12 +23,9 @@ steps:
     BlackDuckService: 'bd_aws'
     DetectArguments: |
       --blackduck.trust.cert=true
-      --detect.bom.aggregate.name=SCM4 4.33
-      --detect.cleanup=false
       --detect.code.location.name=SCM4 4.33
       --detect.project.name=SCM4
       --detect.project.version.name=4.33
       --detect.source.path=/home/vsts/work/1/s
-      --detect.timeout=300
       --detect.excluded.directories=/home/vsts/work/1/s/special
     DetectVersion: 'latest'
