@@ -28,7 +28,7 @@ steps:
       --detect.code.location.name=SCM4 4.33
       --detect.project.name=SCM4
       --detect.project.version.name=4.33
-      --detect.source.path=s
+      --detect.source.path=/home/vsts/work/1/s
       --detect.timeout=300
-      --detect.excluded.directories=\"D:\\a\\1\\s\\Common\"
+      --detect.excluded.directories=/home/vsts/work/1/s/special
     DetectVersion: 'latest'
