@@ -17,7 +17,7 @@ steps:
       mkdir s/Common
       mkdir s/special
       mkdir s/Common/test
-      dir s/Common
+      pwd s/Common
 - task: SynopsysDetectTask@7
   inputs:
     BlackDuckService: 'bd_aws'
