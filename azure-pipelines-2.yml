@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-18.04
+  vmImage: windows-latest
 
 steps:
 - task: CmdLine@2
@@ -17,7 +17,9 @@ steps:
       mkdir s/Common
       mkdir s/special
       mkdir s/Common/test
-      pwd s/Common
+      cd s/Common
+      SET var=%cd%
+      ECHO %var%
 - task: SynopsysDetectTask@7
   inputs:
     BlackDuckService: 'bd_aws'
