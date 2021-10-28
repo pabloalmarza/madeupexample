@@ -32,5 +32,5 @@ steps:
       --detect.project.name=SCM4
       --detect.project.version.name=4.33
       --detect.source.path=/home/vsts/work/1/s
-      --detect.excluded.directories=/home/vsts/work/1/s/special
+      --detect.excluded.directories=\"D:\\a\\1\\s\\Common\\Images and Icons\\VS2008ImageLibrary\\Animations\"
     DetectVersion: 'latest'
