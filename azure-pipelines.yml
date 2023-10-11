@@ -29,8 +29,8 @@ stages:
       inputs:
         contents: 'web.config'
         TargetFolder: 'temp'
-    - task: SynopsysDetectTask@6
+    - task: SynopsysDetectTask@9
       inputs:
         BlackDuckService: 'blackduck1'
         DetectVersion: 'latest'
-        DetectArguments: '--detect.timeout=300'
+        DetectArguments: '--detect.timeout=300 --detect.project.name=Hello World'
